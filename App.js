@@ -47,7 +47,12 @@ export default function App() {
 
     // Add a new task
     const addTask = () => {
-        if (task.trim() === "") return;
+        // if (task.trim() === "") return;
+        // if task is empty, give an alert
+        if (task.trim() === "") {
+            Alert.alert("Error", "Please enter a task", [{ text: "OK" }]);
+            return;
+        }
         setTasks([...tasks, { id: Date.now().toString(), text: task }]);
         setTask("");
     };
